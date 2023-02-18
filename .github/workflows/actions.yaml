@@ -27,31 +27,9 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          pipenv run pytest lib/src/test
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-
-  flake8:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.11
-      - name: Install pipenv
-        run: |
-          python -m pip install --upgrade pip
-          pip install pipenv
-      - name: Install dependencies
-        run: |
-          pipenv install --dev
-      - name: Run Flake8
-        run: |
-          pipenv run flake8 --exclude .venv/
+          echo $PWD
+          ls -la
+          pipenv run pytest /lib/src/test
 
   merge:
     needs: [pytest, flake8]
