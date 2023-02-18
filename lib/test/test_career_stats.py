@@ -36,7 +36,7 @@ def test_collecting_seasonal_data(stats_mode):
 # test collecting seasonal data - invalid season
 
 
-def test_collecting_seasonal_data():
+def test_collecting_seasonal_data_with_invalid_year():
     player_id = 2544
     stats_extractor = CareerStatsExtractor(player_id, StatsMode.PER_36)
 
