@@ -29,7 +29,9 @@ jobs:
         run: |
           echo $PWD
           ls -la
-          pipenv run pytest /lib/src/test
+          cd lib/src/test
+          echo $PWD
+          pipenv run pytest lib/src/test
 
   merge:
     needs: [pytest]
