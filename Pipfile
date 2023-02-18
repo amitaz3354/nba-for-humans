@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 nba-api = "*"
 pytest = "*"
-flake-8="*"
+flake8="*"
 
 [dev-packages]
 
