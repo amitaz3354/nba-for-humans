@@ -24,11 +24,8 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          echo $PWD
-          ls -la
           cd lib/test
-          echo $PWD
-          pipenv run pytest -s -v
+          pytest -s -v
 
   merge:
     needs: [pytest]
