@@ -1,0 +1,2 @@
+class SeasonalDataNotFoundException(Exception):
+    pass
