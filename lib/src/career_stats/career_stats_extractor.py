@@ -13,9 +13,9 @@ class CareerStatsExtractor:
         self.stats_mode = stats_mode
         self.career_stats = None
         if self.stats_mode == StatsMode.REGULAR:
-            self.career_stats = PlayerCareerStats(player_id=player_id, per_mode36=PerModeSimple.per_game)
+            self.career_stats = PlayerCareerStats(player_id=player_id, per_mode36=PerModeSimple.per_game, headers=None)
         if self.stats_mode == StatsMode.PER_36:
-            self.career_stats = PlayerCareerStats(player_id=player_id, per_mode36=PerMode36.per_36)
+            self.career_stats = PlayerCareerStats(player_id=player_id, per_mode36=PerMode36.per_36, headers=None)
 
     def collect_seasonal_stats(self, season: str) -> Dict:
         all_data = self.career_stats.get_normalized_dict()["SeasonTotalsRegularSeason"]
